@@ -6,24 +6,27 @@
 
     buttons.forEach(function (button) {
         button.addEventListener('click', function (e) {
-            // console.log("e.target.value", e.target.dataset.num)
             let value = e.target.dataset.num;
             screen.value += value;
+            console.log('newValue', newValue)
         });
     });
 
-    equal.addEventListener('click', function(e){
-        if (screen.value === '') {
-            screen.value = "Please enter";
-            // alert("Please enter")
+    equal.addEventListener('click', function () {
+        // screen.value = eval(screen.value)
+        if (screen.value == '') {
+            screen.value = ''
         } else {
-            let answer = eval(screen.value);
+            let newValue = String(screen.value);
+            let answer = eval(newValue);
             screen.value = answer;
+            // console.log("answer",  eval(express))
         }
     })
 
-    clear.addEventListener('click', function(e){
-         screen.value = "";
+    clear.addEventListener('click', function () {
+        screen.value = "";
     })
 
 })();
+
